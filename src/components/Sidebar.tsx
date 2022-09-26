@@ -26,7 +26,7 @@ export function Sidebar(props: SidebarProps) {
             <Lesson
               key={lesson.id}
               title={lesson.title}
-              slug={lesson.slug}
+              slug={lesson.slug as any}
               availableAt={new Date(lesson.availableAt)}
               type={lesson.lessonType}
             />
