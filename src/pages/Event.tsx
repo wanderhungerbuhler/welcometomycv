@@ -8,6 +8,12 @@ export function Event() {
   const { slug } = useParams<{ slug: string }>();
   const [language, setLanguage] = useState();
 
+  const l = localStorage.getItem('@language_cv');
+
+  if (!l) {
+    localStorage.setItem('@language_cv', "en");
+  }
+
   useEffect(() => {
     const language = localStorage.getItem('@language_cv');
     setLanguage(language as any);
