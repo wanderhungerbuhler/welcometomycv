@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
 
 export function Event() {
+  const navigation = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const [language, setLanguage] = useState();
 
@@ -12,6 +13,10 @@ export function Event() {
 
   if (!l) {
     localStorage.setItem('@language_cv', "en");
+  }
+
+  if (!slug) {
+    navigation('/welcome/who-i-am')
   }
 
   useEffect(() => {
