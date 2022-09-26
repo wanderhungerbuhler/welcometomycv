@@ -1,0 +1,13 @@
+query GetLessonBySlug($slug: String, $locale: Locale!) {
+  lesson(where: { slug: $slug }, locales: [$locale]) {
+    title
+    videoId
+    availableAt
+    description
+  	teacher {
+      bio
+      avatarURL
+      name
+  	}
+	}
+}

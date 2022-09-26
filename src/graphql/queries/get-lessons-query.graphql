@@ -1,0 +1,9 @@
+query GetLessons($locale: Locale!) {
+  lessons(orderBy: availableAt_ASC, stage: PUBLISHED, locales: [$locale]) {
+    id
+    title
+    slug
+    lessonType
+    availableAt
+  }
+}
