@@ -46,7 +46,7 @@ export function Video(props: VideoProps) {
               </Player>
             ) : (
               <Player>
-                <VideoPlayer crossOrigin="">
+                <VideoPlayer crossOrigin="" poster="../assets/welcome-bemvindo.png">
                   <source
                     data-src={data.lesson.videoId}
                     type="video/mp4"
